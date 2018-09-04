@@ -1,0 +1,31 @@
+language: java
+sudo: false
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+matrix:
+  include:
+    - name: "Spock tests (groovy)"
+      env: GRADLE_TEST_TASK=testSpock
+    - name: "Spek tests (kotlin)"
+      env: GRADLE_TEST_TASK=testSpek
+    - name: "Cucumber tests (java)"
+      env: GRADLE_TEST_TASK=testCucumber
+    - name: "JGiven tests (java)"
+      env: GRADLE_TEST_TASK=testJGiven
+    - name: "JBehave tests (java)"
+      env: GRADLE_TEST_TASK=testJBehave
+    - name: "JUnit4 tests (java)"
+      env: GRADLE_TEST_TASK=testJUnit4
+    - name: "JUnit4 tests (java)"
+      env: GRADLE_TEST_TASK=testJUnit5
+    - name: "TestNG tests (java)"
+      env: GRADLE_TEST_TASK=testNG
+
+script: ./gradlew clean $GRADLE_TEST_TASK

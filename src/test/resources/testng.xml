@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MainSuite" verbose="1" parallel="methods" thread-count="5">
+    <test name="Quick">
+        <groups>
+            <run>
+                <include name="quick" />
+            </run>
+        </groups>
+        <classes>
+            <class name="jbhembise.testauto.testng.CalculatorNgTest" />
+        </classes>
+    </test>
+    <test name="Long">
+        <groups>
+            <run>
+                <include name="long" />
+            </run>
+        </groups>
+        <classes>
+            <class name="jbhembise.testauto.testng.CalculatorNgTest" />
+        </classes>
+    </test>
+</suite>

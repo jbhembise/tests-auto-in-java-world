@@ -1,0 +1,37 @@
+### Elastic Search ###
+data/
+transaction.log
+
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+### OSX ###
+.DS_Store
+
+### PostgreSQL embedded ###
+.embedpostgresql
+
+### Gradle ###
+.gradle/
+out/
+build/
