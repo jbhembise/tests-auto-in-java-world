@@ -23,9 +23,15 @@ matrix:
       env: GRADLE_TEST_TASK=testJBehave
     - name: "JUnit4 tests (java)"
       env: GRADLE_TEST_TASK=testJUnit4
-    - name: "JUnit4 tests (java)"
+    - name: "JUnit5 tests (java)"
       env: GRADLE_TEST_TASK=testJUnit5
     - name: "TestNG tests (java)"
       env: GRADLE_TEST_TASK=testNG
+    - name: "Pitest mutation testing (java)"
+      env: GRADLE_TEST_TASK=pitest
+    - name: "Jqwik tests (java)"
+      env: GRADLE_TEST_TASK=testJqwik
+    - name: "JUnit Quick Check tests (java)"
+      env: GRADLE_TEST_TASK=testJunitQuickCheck
 
 script: ./gradlew clean $GRADLE_TEST_TASK

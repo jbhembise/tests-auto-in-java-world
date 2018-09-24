@@ -1,6 +1,6 @@
 package jbhembise.testauto.jgiven;
 
-import jbhembise.testauto.Calculator;
+import jbhembise.testauto.calculator.Calculator;
 import com.tngtech.jgiven.Stage;
 import com.tngtech.jgiven.annotation.ProvidedScenarioState;
 

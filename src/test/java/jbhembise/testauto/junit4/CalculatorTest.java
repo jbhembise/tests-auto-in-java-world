@@ -1,6 +1,6 @@
 package jbhembise.testauto.junit4;
 
-import jbhembise.testauto.Calculator;
+import jbhembise.testauto.calculator.Calculator;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

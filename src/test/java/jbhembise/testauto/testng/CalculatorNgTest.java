@@ -1,6 +1,6 @@
 package jbhembise.testauto.testng;
 
-import jbhembise.testauto.Calculator;
+import jbhembise.testauto.calculator.Calculator;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

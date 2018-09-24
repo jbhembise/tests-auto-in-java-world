@@ -1,6 +1,6 @@
 package jbhembise.testauto.spek
 
-import jbhembise.testauto.Calculator
+import jbhembise.testauto.calculator.Calculator
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.given
 import org.jetbrains.spek.api.dsl.it

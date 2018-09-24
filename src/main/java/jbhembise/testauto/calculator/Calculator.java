@@ -1,4 +1,4 @@
-package jbhembise.testauto;
+package jbhembise.testauto.calculator;
 
 public class Calculator {
 

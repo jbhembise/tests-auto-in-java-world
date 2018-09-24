@@ -35,3 +35,7 @@ nbdist/
 .gradle/
 out/
 build/
+
+### Others ###
+.jqwik-database
+jgiven-reports/

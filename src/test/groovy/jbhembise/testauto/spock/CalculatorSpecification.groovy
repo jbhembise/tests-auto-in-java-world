@@ -1,6 +1,6 @@
 package jbhembise.testauto.spock
 
-import jbhembise.testauto.Calculator
+import jbhembise.testauto.calculator.Calculator
 import spock.lang.Specification
 import spock.lang.Unroll
 

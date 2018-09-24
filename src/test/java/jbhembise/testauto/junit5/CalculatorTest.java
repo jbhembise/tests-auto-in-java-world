@@ -2,7 +2,7 @@ package jbhembise.testauto.junit5;
 
 import java.util.stream.Stream;
 
-import jbhembise.testauto.Calculator;
+import jbhembise.testauto.calculator.Calculator;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
