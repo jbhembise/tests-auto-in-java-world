@@ -9,9 +9,11 @@ class CalculatorSpecification extends Specification {
 
   def "#n1 + #n2 = #expected"(int n1, int n2, int expected) {
     given:
-      def calculator = new Calculator()
+    def calculator = new Calculator()
+
     expect:
-      calculator.add(n1, n2) == expected
+    calculator.add(n1, n2) == expected
+
     where:
       n1 | n2 || expected
       1  | 2  || 3
@@ -21,54 +23,64 @@ class CalculatorSpecification extends Specification {
 
   def "#n1 - #n2 = #expected"(int n1, int n2, int expected) {
     given:
-      def calculator = new Calculator()
+    def calculator = new Calculator()
+
     expect:
-      calculator.substract(n1, n2) == expected
+    calculator.substract(n1, n2) == expected
+
     where:
-      n1 | n2 || expected
-      3  | 2  || 1
-      4  | 2  || 2
+    n1 | n2 || expected
+    3  | 2  || 1
+    4  | 2  || 2
   }
 
   def "#n1 * #n2 = #expected"(int n1, int n2, int expected) {
     given:
-      def calculator = new Calculator()
+    def calculator = new Calculator()
+
     expect:
-      calculator.multiply(n1, n2) == expected
+    calculator.multiply(n1, n2) == expected
+
     where:
-      n1 | n2 || expected
-      3  | 3  || 9
-      6  | 5  || 30
+    n1 | n2 || expected
+    3  | 3  || 9
+    6  | 5  || 30
   }
 
   def "#n1 / #n2 = #expected"(int n1, int n2, int expected) {
     given:
-      def calculator = new Calculator()
+    def calculator = new Calculator()
+
     expect:
-      calculator.divide(n1, n2) == expected
+    calculator.divide(n1, n2) == expected
+
     where:
-      n1 | n2 || expected
-      9  | 3  || 3
-      30 | 5  || 6
+    n1 | n2 || expected
+    9  | 3  || 3
+    30 | 5  || 6
   }
 
   def "divide by 0 should throw an exception"() {
     given:
-      def calculator = new Calculator()
+    def calculator = new Calculator()
+
     when:
-      calculator.divide(10, 0)
+    calculator.divide(10, 0)
+
     then:
-      thrown ArithmeticException
+    thrown ArithmeticException
   }
 
   def "fibonacci(#n) = #expected"(int n, int expected) {
     given:
-      def calculator = new Calculator()
+    def calculator = new Calculator()
+
     expect:
-      calculator.fibonacci(n) == expected
+    calculator.fibonacci(n) == expected
+
     where:
-      n || expected
-      4 || 3
-      6 || 8
+    n || expected
+    4 || 3
+    6 || 8
   }
 }
