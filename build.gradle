@@ -1,3 +1,5 @@
+import com.thoughtworks.gauge.gradle.GaugeTask // For Gauge
+
 group 'jbhembise.testauto'
 version '1.0-SNAPSHOT'
 description 'Project to benchmark different frameworks/libraries in Java World'
@@ -5,10 +7,15 @@ description 'Project to benchmark different frameworks/libraries in Java World'
 buildscript {
     repositories {
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.2.51" // For Spek framework
         classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.3.0' // For test mutation (Pitest)
+        classpath "net.saliman:gradle-cobertura-plugin:2.5.4" // For Cobertura
+        classpath 'com.thoughtworks.gauge.gradle:gauge-gradle-plugin:+' // For Gauge
     }
 }
 
@@ -16,8 +23,12 @@ apply plugin: 'java'
 apply plugin: 'groovy' // For Spock framework
 apply plugin: 'kotlin' // For Spek framework
 apply plugin: 'info.solidsoft.pitest' // For test mutation (Pitest)
+apply plugin: "jacoco" // For Jacoco
+apply plugin: 'net.saliman.cobertura' // For Cobertura
+apply plugin: 'gauge' // For Gauge framework
 
 sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -33,6 +44,9 @@ dependencies {
     testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.2.0'
     testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.2.0'
     testCompile group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.2.0'
+
+    // JUnit data provider library
+    testCompile group: 'com.tngtech.java', name: 'junit-dataprovider', version: '1.10.0'
 
     // TestNG framework
     testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
@@ -59,9 +73,6 @@ dependencies {
     // AssertJ library
     testCompile group: 'org.assertj', name: 'assertj-core', version: '3.10.0'
 
-    // JUnit data provider library
-    testCompile group: 'com.tngtech.java', name: 'junit-dataprovider', version: '1.10.0'
-
     // Jqwik
     testCompile "net.jqwik:jqwik:0.8.15"
 
@@ -81,6 +92,9 @@ dependencies {
 
     // EasyMock
     testCompile 'org.easymock:easymock:3.6'
+
+    // Gauge
+    testCompile 'com.thoughtworks.gauge:gauge-java:0.6.8'
 }
 
 // Default configuration for Gradle test tasks
@@ -184,4 +198,35 @@ task testJMockit(type: Test) {
     include '**/jmockit/**'
     def jmockit = configurations.testCompile.files.find { it.name.contains("jmockit") }.absolutePath
     jvmArgs "-javaagent:$jmockit"
+}
+
+jacocoTestReport {
+    reports {
+        html.enabled true
+    }
+    dependsOn check
+}
+
+coberturaReport {
+    dependsOn check
+}
+
+gauge {
+    specsDir = 'src/test/resources/jbhembise/testauto/gauge'
+    additionalFlags = '--verbose'
+}
+
+tasks.withType(GaugeTask) {
+    def jmockit = configurations.testCompile.files.find { it.name.contains("jmockit") }.absolutePath
+    jvmArgs "-javaagent:$jmockit"
+    include '**/gauge/**'
+}
+
+task testGauge(type: GaugeTask) {
+    doFirst {
+        gauge {
+            specsDir = 'src/test/resources/jbhembise/testauto/gauge'
+            additionalFlags = '--verbose'
+        }
+    }
 }

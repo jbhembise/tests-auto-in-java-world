@@ -39,3 +39,8 @@ build/
 ### Others ###
 .jqwik-database
 jgiven-reports/
+
+### Gauge ###
+.gauge/
+reports/
+logs/

@@ -9,6 +9,12 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
+install:
+  - sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
+  - echo deb https://dl.bintray.com/gauge/gauge-deb nightly main | sudo tee -a /etc/apt/sources.list
+  - sudo apt-get update
+  - apt-get install gauge
+
 matrix:
   include:
     - name: "Spock tests (groovy)"
@@ -41,5 +47,7 @@ matrix:
       env: GRADLE_TEST_TASK=testEasyMock
     - name: "Mockito tests (java)"
       env: GRADLE_TEST_TASK=testMockito
+    - name: "Gauge tests (java)"
+      env: GRADLE_TEST_TASK=testGauge
 
 script: ./gradlew clean $GRADLE_TEST_TASK
