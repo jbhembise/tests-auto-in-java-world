@@ -5,8 +5,8 @@ Le but de ce projet est de tester les différentes librairies / frameworks de te
 
 ## Code coverage
 
-# Jacoco
+### Jacoco
 `./gradlew clean jacocoTestReport`
 
-# Cobertura
+### Cobertura
 `./gradlew clean coberturaReport`
