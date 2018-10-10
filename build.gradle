@@ -73,6 +73,9 @@ dependencies {
     // AssertJ library
     testCompile group: 'org.assertj', name: 'assertj-core', version: '3.10.0'
 
+    // Google Truth library
+    testCompile group: 'com.google.truth', name: 'truth', version: '0.42'
+
     // Jqwik
     testCompile "net.jqwik:jqwik:0.8.15"
 
@@ -229,4 +232,9 @@ task testGauge(type: GaugeTask) {
             additionalFlags = '--verbose'
         }
     }
+}
+
+task testAssertions(type: Test) {
+    include '**/assertions/**'
+    useJUnitPlatform()
 }
