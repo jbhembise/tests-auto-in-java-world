@@ -14,11 +14,19 @@ public class CalculatorSteps {
     private Exception exception;
 
     // Shared steps
+    @Given("^une calculatrice$")
+    public void instancier_une_calculatrice() {
+        this.calculator = new Calculator();
+    }
     @Given("^a calculator exists$")
     public void a_calculator_exists() {
         this.calculator = new Calculator();
     }
 
+    @Then("^cela doit retourner (-?\\d+)$")
+    public void cela_doit_retourner_le_resultat_attendu(int expected) {
+        assertThat(this.result).isEqualTo(expected);
+    }
     @Then("^it should return (-?\\d+)$")
     public void it_should_return_expected_result(int expected) {
         assertThat(this.result).isEqualTo(expected);
@@ -30,6 +38,10 @@ public class CalculatorSteps {
     }
 
     // Specific steps
+    @When("^j'additionne (-?\\d+) et (-?\\d+)$")
+    public void additionner_deux_nombres(int n1, int n2) {
+        this.result = this.calculator.add(n1, n2);
+    }
     @When("^i add (-?\\d+) and (-?\\d+)$")
     public void add_two_numbers(int n1, int n2) {
         this.result = this.calculator.add(n1, n2);
