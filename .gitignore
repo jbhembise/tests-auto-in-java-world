@@ -39,6 +39,7 @@ build/
 ### Others ###
 .jqwik-database
 jgiven-reports/
+mutation-files/
 
 ### Gauge ###
 .gauge/
