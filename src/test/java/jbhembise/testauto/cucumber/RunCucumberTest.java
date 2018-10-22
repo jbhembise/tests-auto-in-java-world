@@ -9,4 +9,4 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/jbhembise/testauto/cucumber",
         tags = "~@ignore"
 )
-public class CalculatorTest {}
+public class RunCucumberTest {}
