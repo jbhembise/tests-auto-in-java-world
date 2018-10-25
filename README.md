@@ -27,7 +27,7 @@ Solutions out of the scope of this study (regarding above criteria) :
 - **JCrawler** (latest release in April 2013)
 - **Jetif** (latest release in May 2006)
 
-## Main frameworks
+## Unit and Integration frameworks
 
 ### JUnit
 
@@ -133,6 +133,8 @@ First release : **Aug 2010**
 
 Gradle task : `./gradlew clean testJGiven`
 
+To have nice HTML report, execute `./gradlew clean test` and have a look at `build/reports/jgiven/test/html/index.html`
+
 ### SPOCK framework
 
 Current version : **V1.1**
@@ -146,6 +148,8 @@ Gradle task : `./gradlew clean testSpock`
 Current version : **V2.0.0-rc1**
 
 First release : **September 2016**
+
+Github URL : https://github.com/spekframework/spek
 
 Gradle task : `./gradlew clean testSpek`
 
