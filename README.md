@@ -1,4 +1,7 @@
 # Tests auto in Java world
+
+![alt text](https://raw.githubusercontent.com/jbhembise/tests-auto-in-java-world/master/doc/java_island_terra_incognita.png "Discover Tests Auto in Java Island")
+
 Overview of tests auto concepts and solutions in Java ecosystem.
 
 The purpose of this project is to bootstrap and experiment a couple of libraries / frameworks concerning automatic testing.
