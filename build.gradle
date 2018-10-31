@@ -17,6 +17,7 @@ buildscript {
         classpath "net.saliman:gradle-cobertura-plugin:2.5.4" // For Cobertura
         classpath 'com.thoughtworks.gauge.gradle:gauge-gradle-plugin:+' // For Gauge
         classpath "com.tngtech.jgiven:jgiven-gradle-plugin:0.16.1" // For JGiven HTML reports
+        classpath "net.serenity-bdd:serenity-gradle-plugin:1.1.1" // For Serenity BDD
     }
 }
 
@@ -28,6 +29,7 @@ apply plugin: "jacoco" // For Jacoco
 apply plugin: 'net.saliman.cobertura' // For Cobertura
 apply plugin: 'gauge' // For Gauge framework
 apply plugin: 'com.tngtech.jgiven.gradle-plugin' // For JGiven
+apply plugin: 'net.serenity-bdd.aggregator' // For Serenity BDD
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -107,6 +109,10 @@ dependencies {
 
     // Gauge
     testCompile 'com.thoughtworks.gauge:gauge-java:0.6.8'
+
+    // Serenity BDD
+    testCompile group: 'net.serenity-bdd', name: 'serenity-core', version: '1.1.1'
+    testCompile group: 'net.serenity-bdd', name: 'serenity-junit', version: '1.1.1'
 }
 
 // Default configuration for Gradle test tasks
@@ -245,4 +251,8 @@ task testGauge(type: GaugeTask) {
 task testAssertions(type: Test) {
     include '**/assertions/**'
     useJUnitPlatform()
+}
+
+task testSerenityBDD(type: Test) {
+    include '**/serenitybdd/**'
 }

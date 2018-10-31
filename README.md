@@ -121,6 +121,16 @@ Github URL : https://github.com/concordion/concordion
 
 ### Serenity BDD
 
+Current version : **V2.0.11**
+
+Latest release : **October 2018**
+
+First release : **June 2015**
+
+Github URL : https://github.com/serenity-bdd/serenity-core
+
+Gradle task : `./gradlew clean testSerenityBDD aggregate`
+
 ### Specsy
 
 Current version : **V2.3.2**
@@ -150,6 +160,8 @@ Current version : **V2.0.0-rc1**
 First release : **September 2016**
 
 Github URL : https://github.com/spekframework/spek
+
+Test engine (JUnit) : `spek`
 
 Gradle task : `./gradlew clean testSpek`
 

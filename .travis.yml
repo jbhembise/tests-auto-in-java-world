@@ -51,5 +51,7 @@ matrix:
       env: GRADLE_TEST_TASK=testGauge
     - name: "Assertions tests (java)"
       env: GRADLE_TEST_TASK=testAssertions
+    - name: "Serenity BDD tests (java)"
+      env: GRADLE_TEST_TASK=testSerenityBDD
 
 script: ./gradlew clean $GRADLE_TEST_TASK
