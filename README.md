@@ -224,7 +224,13 @@ Gradle task : `./gradlew clean testJunitQuickCheck`
 
 Current version : **V0.25**
 
+Latest release : **February 2018**
+
 First release : **December 2015**
+
+Github URL : https://github.com/ncredinburgh/QuickTheories
+
+Gradle task : `./gradlew clean testQuickTheories`
 
 ## Code coverage
 

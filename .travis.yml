@@ -39,6 +39,8 @@ matrix:
       env: GRADLE_TEST_TASK=testJqwik
     - name: "JUnit Quick Check tests (java)"
       env: GRADLE_TEST_TASK=testJunitQuickCheck
+    - name: "QuickTheories tests (java)"
+      env: GRADLE_TEST_TASK=testQuickTheories
     - name: "JMock tests (java)"
       env: GRADLE_TEST_TASK=testJMock
     - name: "JMockit tests (java)"
