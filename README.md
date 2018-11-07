@@ -50,7 +50,7 @@ Solutions out of the scope of this study (regarding above criteria) :
 
 *A serious competitor of Junit, inspiring it and inspired from it.*
 
-- Current version : **V6.10**
+- Current version : **V6.14.3**
 - Latest release : **September 2018**
 - First release : **September 2004**
 - Github URL : https://github.com/cbeust/testng
@@ -63,7 +63,7 @@ Solutions out of the scope of this study (regarding above criteria) :
 *The most famous mocking framework. 
 It respects well the AAA pattern, allowing expectations after the call of the method to test.* 
 
-- Current version : **V2.23.0**
+- Current version : **V2.23.2**
 - Latest release : **October 2018**
 - First release : **March 2008**
 - Github URL : https://github.com/mockito/mockito
@@ -172,7 +172,7 @@ It respects well the AAA pattern, allowing expectations after the call of the me
 
 *A BDD framework on top of JUnit4, Cucumber or JBehave, allowing coding Unit and Acceptance tests using BDD style.*
 
-- Current version : **V2.0.11**
+- Current version : **V2.0.15**
 - Latest release : **October 2018**
 - First release : **June 2015**
 - Github URL : https://github.com/serenity-bdd/serenity-core
@@ -266,9 +266,9 @@ TODO
 
 *A PBT framework, based on annotations for classic cases or generators for more complex properties.*
 
-- Current version : **V0.9.1**
+- Current version : **V0.9.2**
+- Latest release : **November 2018**
 - First release : **March 2018**
-- Latest release : **October 2018**
 - Github URL : https://github.com/jlink/jqwik
 - Gradle task : `./gradlew clean testJqwik`
 
@@ -276,7 +276,7 @@ TODO
 
 *A PBT framework, similar to Jqwik.*
 
-- Current version : **V0.8.5**
+- Current version : **V0.8.1**
 - Latest release : **May 2018**
 - First release : **February 2017**
 - Github URL : https://github.com/pholser/junit-quickcheck
