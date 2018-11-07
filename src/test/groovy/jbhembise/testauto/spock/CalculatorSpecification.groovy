@@ -7,6 +7,17 @@ import spock.lang.Unroll
 @Unroll
 class CalculatorSpecification extends Specification {
 
+  def "addition of two numbers"() {
+    given: "a calculator"
+    def calculator = new Calculator()
+
+    when: "i add 1 and 9"
+    def result = calculator.add(1, 9)
+
+    then: "it should return 10"
+    result == 10
+  }
+
   def "#n1 + #n2 = #expected"(int n1, int n2, int expected) {
     given:
     def calculator = new Calculator()

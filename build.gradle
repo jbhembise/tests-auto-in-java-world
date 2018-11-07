@@ -63,6 +63,9 @@ dependencies {
     // Spock framework
     testCompile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.15'
     testCompile group: 'org.spockframework', name: 'spock-core', version: '1.1-groovy-2.4'
+    testCompile(group: 'com.athaydes', name: 'spock-reports', version: '1.6.1') {
+        transitive = false // this avoids affecting your version of Groovy/Spock
+    }
 
     // Spek framework
     testCompile group: 'org.jetbrains.spek', name: 'spek-api', version: '1.1.5'
